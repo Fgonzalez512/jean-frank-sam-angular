@@ -1,0 +1,11 @@
+{
+  "name": "unit-1.8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

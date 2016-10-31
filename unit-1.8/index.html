@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" charset="UTF-8"></script>
+        <script src="app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="style.css" media="screen" title="no title">
+        <title>Document</title>
+    </head>
+
+    <body ng-app="app">
+        <div ng-controller="myController">
+
+
+            <h3>booyah</h3>
+
+            <button ng-click="pickRandomNumber()">Pick Random Number</button>
+            <h3>The number is: {{view.number}}</h3>
+        </div>
+
+        <div ng-controller='myController2'>
+            <h3>Word Reverser</h3>
+            <input type="text" name="name" ng-model='text'>
+            <h1>Your word is: {{ text }}</h1>
+            <button ng-click='reverse(text)' class="reverseButton">Reverse!</button>
+        </div>
+
+        <div class="container" ng-controller="myController3">
+            <section>
+                <h2>Ping Pong Score Keeper {{alert}}</h2>
+                <button ng-click="resetGame()">Reset</button>
+
+                <div ng-repeat="player in players" ng-click="addScore(player)" ng-mouseenter="scoreAlert()" ng-mouseleave="clear()" ng-class="{box: true, blue: player.score < 11, win: player.win === true, lose: player.win === false}">
+                    <h1>{{player.player}}</h1>
+                    <span class="num">{{player.score}}</span>
+                    <h3 ng-hide="player.serving === false || player.win===false || player.win===true">serving</h3>
+                    <h3 ng-show="player.win===true">winner!</h3>
+                </div>
+
+            </section>
+        </div>
+
+
+    </body>
+
+</html>
